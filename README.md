@@ -4,7 +4,7 @@
 
 Next step is getting a free API key at [News API](https://newsapi.org/) witch will help us make some call requests to the server and retrieve the news articles. 
 
-Once the api key is in your hands, go to `/src/app/news-api.service.ts` and paste it to where it said put “API_KEY” in constants.ts file.
+Once the api key is in your hands, go to `/src/app/constants.ts` and paste it to where it said put “API_KEY”.
 
 ## Installing dependencies
 
