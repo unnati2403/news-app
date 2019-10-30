@@ -1,0 +1,23 @@
+<div class="main-wrapper">
+    <div class="inner-wrapper">
+        <div class="header-content">
+            <h1 class="header-style">{{newsData['title']}}</h1>
+            <div class="author-date-box">
+                {{newsData['author']}} | {{newsData['publishedAt'] | date: 'MMM d, y, h:mm:ss a'}}
+            </div>
+        </div>
+        <div class="sub-content">
+            <div class="img-wrapper">
+                <div class="img-content">
+                    <img src="{{newsData['urlToImage']}}">
+                </div>
+            </div>
+            <div class="description">
+                <p>
+                    {{newsData['description']}}
+                </p>
+            </div>
+            <div class="more-link"><a target="_blank" href="{{newsData['url']}}">Read More</a></div>
+        </div>
+    </div>
+</div>

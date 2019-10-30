@@ -1,0 +1,38 @@
+<div class="div-wrapper" *ngIf="errorMsg.length === 0">
+    <div *ngIf="!showLoader">
+        <h1 class="center-element">
+            India News
+        </h1>
+        <div class="list-wrapper">
+            <div class="flex-style">
+                <div class="content-wrapper">
+                    <div *ngFor="let item of newsData" class="content-item">
+                        <div class="content-value">
+                            <span class="content-img cursor-pointer" (click)="navigateToView(item)">
+                                <div class="img-box">
+                                    <img class="img-style" src="{{item['urlToImage']}}">
+                                </div>
+                            </span>
+                            <div class="content-box">
+                                <h2 class="text-style cursor-pointer" (click)="navigateToView(item)">{{item['title']}}
+                                </h2>
+                                <div class="author-box cursor-pointer" (click)="navigateToView(item)">
+                                    By {{item['author']}}
+                                </div>
+                                <div class="date-box cursor-pointer" (click)="navigateToView(item)">
+                                    {{item['publishedAt'] | date: 'MMM d, y, h:mm:ss a'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showLoader">
+        <i class="fa fa-spinner fa-pulse center-text loader-icon"></i>
+    </div>
+</div>
+<div class="center-text error-msg" *ngIf="errorMsg.length > 0">{{errorMsg}}
+    <button (click)="retryApi()">Retry</button>
+</div>
