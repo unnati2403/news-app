@@ -7,7 +7,7 @@ import {API_KEY} from './constants';
 @Injectable({
     providedIn: 'root'
 })
-export class DpAppService {
+export class DpNewsAppService {
 
     newsData = [];
 
