@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
+import {API_KEY} from './constants';
 
 @Injectable({
     providedIn: 'root'
 })
 export class DpAppService {
 
-    api_key = '65f781a8c5734b19931b7e953ebc8b02';
     newsData = [];
 
     constructor(private http: HttpClient) { }
@@ -18,7 +18,7 @@ export class DpAppService {
      * @memberof DpAppService
      */
     fetchNewsData(params) {
-        params['apiKey'] = this.api_key;
+        params['apiKey'] = API_KEY;
         let option = { params: params };
         return this.http.get('https://newsapi.org/v2/everything?', option).pipe(catchError((err) => throwError(err)));
     }
