@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { DpAppService } from './../app.service';
+import { DpNewsAppService } from '../news-app.service';
 
 @Component({
     selector: 'app-news-list',
@@ -14,7 +14,7 @@ export class NewsListComponent implements OnInit {
     newsData = [];
     errorMsg = '';
     showLoader = false;
-    constructor(private appService: DpAppService, private route: Router, private activeRoute: ActivatedRoute) { }
+    constructor(private appService: DpNewsAppService, private route: Router, private activeRoute: ActivatedRoute) { }
 
     ngOnInit() {
         this.retryApi();
